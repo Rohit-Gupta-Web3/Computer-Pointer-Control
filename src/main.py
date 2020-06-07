@@ -2,12 +2,12 @@ import os
 import cv2
 import logging as log
 from argparse import ArgumentParser
-from .face_detection import FaceDetectionModel
-from .facial_landmarks_detection import FacialLandMarkDetectionModel
-from .gaze_estimation import GazeEstimationModel
-from .head_pose_estimation import HeadPoseEstimationModel
-from .mouse_controller import MouseController
-from .input_feeder import InputFeeder
+from face_detection import FaceDetectionModel
+from facial_landmarks_detection import FacialLandMarkDetectionModel
+from gaze_estimation import GazeEstimationModel
+from head_pose_estimation import HeadPoseEstimationModel
+from mouse_controller import MouseController
+from input_feeder import InputFeeder
 
 
 def build_argparser():
@@ -60,7 +60,7 @@ def check(args):
         if not os.path.isfile(args.input):
             log.error("Unable to locate the file")
             exit(1)
-        in_put_feeder = InputFeeder(args.input)
+        in_put_feeder = InputFeeder("video",args.input)
     return in_put_feeder
 
 
@@ -71,8 +71,10 @@ def check_input_files(file):
     :return: 1 if file is not found
     """
     if not os.path.isfile(file):
-        log.error(file + " was not able to load")
+        print(file + " was not able to load")
         return 1
+    else:
+        return 0    
 
 
 def loader(in_put_feeder, fdm, fldm, gem, hpem):
@@ -109,7 +111,7 @@ def main():
         fldm = FacialLandMarkDetectionModel(args.facial_landmark_model, args.device, args.cpu_extension)
     if check_input_files(args.gaze_estimation_model) == 0:
         gem = GazeEstimationModel(args.gaze_estimation_model, args.device, args.cpu_extension)
-    if check_input_files(args.args.head_pose_model) == 0:
+    if check_input_files(args.head_pose_model) == 0:
         hpem = HeadPoseEstimationModel(args.head_pose_model, args.device, args.cpu_extension)
 
     mouse = MouseController('medium', 'fast')
@@ -117,6 +119,7 @@ def main():
     loader(in_put_feeder, fdm, fldm, gem, hpem)
 
     frame_c = 0
+
     for ret, frame in in_put_feeder.next_batch():
         if not ret:
             break
@@ -135,7 +138,7 @@ def main():
 
         hpe_out = hpem.predict(face.copy())
         left, right, eye_coords = fldm.predict(face.copy())
-        mouse_vec, gaze_vec = gem.predict([left, right], hpe_out)
+        mouse_vec, gaze_vec = gem.predict(left, right, hpe_out)
 
         if frame_c % 5 == 0:
             mouse.move(mouse_vec[0], mouse_vec[1])

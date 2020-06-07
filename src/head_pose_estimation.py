@@ -7,7 +7,7 @@ import os  # used to split the model location string
 import cv2
 import numpy as np
 import logging as log
-from openvino.inference_engine import IENetwork, IECore  # used to load the IE python API
+from openvino.inference_engine import IECore  # used to load the IE python API
 
 
 class HeadPoseEstimationModel:
@@ -44,8 +44,8 @@ class HeadPoseEstimationModel:
         self.ie = IECore()
         model_xml = self.model
         model_bin = os.path.splitext(model_xml)[0] + ".bin"
-        self.net = IENetwork(model=model_xml, weights=model_bin)
-        self.ex_net = self.ie.load_network(self.net)
+        self.net = self.ie.read_network(model=model_xml, weights=model_bin)
+        self.ex_net = self.ie.load_network(network=self.net, device_name=self.device)
 
         self.check_cpu_support()
 
@@ -101,6 +101,8 @@ class HeadPoseEstimationModel:
         :param image:
         :return: processed output
         """
+        self.get_input_shape()
+        self.get_output_shape()
         proc_img = self.preprocess_input(image.copy())
         out_put = self.ex_net.infer({self.inp: proc_img})
         proc_out = self.preprocess_output(out_put)

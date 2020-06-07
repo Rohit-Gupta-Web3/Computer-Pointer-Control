@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 import logging as log
 import math
-from openvino.inference_engine import IENetwork, IECore  # used to load the IE python API
+from openvino.inference_engine import IECore  # used to load the IE python API
 
 
 class GazeEstimationModel:
@@ -46,8 +46,8 @@ class GazeEstimationModel:
         self.ie = IECore()
         model_xml = self.model
         model_bin = os.path.splitext(model_xml)[0] + ".bin"
-        self.net = IENetwork(model=model_xml, weights=model_bin)
-        self.ex_net = self.ie.load_network(self.net)
+        self.net = self.ie.read_network(model=model_xml, weights=model_bin)
+        self.ex_net = self.ie.load_network(network=self.net, device_name=self.device)
 
         self.check_cpu_support()
 
@@ -97,15 +97,16 @@ class GazeEstimationModel:
         """
         self.output_shape = self.net.outputs[self.out].shape
 
-    def predict(self, image, hpa):
+    def predict(self, left, right, hpa):
         """
         This method is meant for running predictions on the input image.
         """
-        self.hpa = hpa
-        left_proc, right_proc = self.preprocess_input(image[0].copy, image[1].copy)
+        self.get_input_shape()
+        self.get_output_shape()
+        left_proc, right_proc = self.preprocess_input(left.copy(), right.copy())
         out_put = self.ex_net.infer(
-            {'head_pose_angles': self.hpa, 'left_eye_image': left_proc, 'right_eye_image': right_proc})
-        mouse_coord, gaze = self.preprocess_output(out_put)
+            {'head_pose_angles': hpa, 'left_eye_image': left_proc, 'right_eye_image': right_proc})
+        mouse_coord, gaze = self.preprocess_output(out_put, hpa)
 
         return mouse_coord, gaze
 
@@ -120,13 +121,13 @@ class GazeEstimationModel:
         re_processed = np.transpose(np.expand_dims(re_resized, axis=0), (0, 3, 1, 2))
         return le_processed, re_processed
 
-    def preprocess_output(self, outputs):
+    def preprocess_output(self, outputs, hpa):
         """
         Before feeding the output of this model to the next model,
         you might have to preprocess the output. This function is where you can do that.
         """
-        gaze_vector = outputs[self.out[0]].tolist()[0]
-        rollv = self.hpa[2]  # angle_r_fc output from HeadPoseEstimation model
+        gaze_vector = outputs[self.out][0]
+        rollv = hpa[2]  # angle_r_fc output from HeadPoseEstimation model
         cosv = math.cos(rollv * math.pi / 180.0)
         sinv = math.sin(rollv * math.pi / 180.0)
 

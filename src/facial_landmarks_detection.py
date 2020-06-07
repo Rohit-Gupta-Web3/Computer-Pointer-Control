@@ -7,7 +7,7 @@ import os  # used to split the model location string
 import cv2
 import numpy as np
 import logging as log
-from openvino.inference_engine import IENetwork, IECore  # used to load the IE python API
+from openvino.inference_engine import IECore  # used to load the IE python API
 
 
 class FacialLandMarkDetectionModel:
@@ -44,8 +44,8 @@ class FacialLandMarkDetectionModel:
         self.ie = IECore()
         model_xml = self.model
         model_bin = os.path.splitext(model_xml)[0] + ".bin"
-        self.net = IENetwork(model=model_xml, weights=model_bin)
-        self.ex_net = self.ie.load_network(self.net)
+        self.net = self.ie.read_network(model=model_xml, weights=model_bin)
+        self.ex_net = self.ie.load_network(network=self.net, device_name=self.device)
 
         self.check_cpu_support()
 
@@ -105,7 +105,7 @@ class FacialLandMarkDetectionModel:
         self.get_output_shape()
         img = image.copy()
         pre_process_input = self.preprocess_input(img)
-        out_put = self.ex_net.inder({self.inp: pre_process_input})
+        out_put = self.ex_net.infer({self.inp: pre_process_input})
         coords = self.preprocess_output(out_put)
         coords = coords * np.array([image.shape[1], image.shape[0], image.shape[1], image.shape[0]])
         coords = coords.astype(np.int32)
@@ -126,7 +126,7 @@ class FacialLandMarkDetectionModel:
         l_y0 = coords[1] - 10
         l_x1 = coords[0] + 10
         l_y1 = coords[1] + 10
-        return image[l_x0:l_y0, l_x1:l_y1], [l_x0, l_y0, l_x1, l_y1]
+        return image[l_y0:l_y1, l_x0:l_x1], [l_x0, l_y0, l_x1, l_y1]
 
     @staticmethod
     def right_eye(coords, image):
@@ -140,7 +140,7 @@ class FacialLandMarkDetectionModel:
         r_y0 = coords[3] - 10
         r_x1 = coords[2] + 10
         r_y1 = coords[3] + 10
-        return image[r_x0:r_y0, r_x1:r_y1], [r_x0, r_y0, r_x1, r_y1]
+        return image[r_y0:r_y1, r_x0:r_x1], [r_x0, r_y0, r_x1, r_y1]
 
     def preprocess_input(self, image):
         """
@@ -151,8 +151,8 @@ class FacialLandMarkDetectionModel:
         """
         # since the model require BGR image and we provide RGB, so we need to convert it to BGR
         converted_image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        proc_image = cv2.resize(converted_image, (self.input_shape[3], self.input_shape[2]))
-        proc_image = np.transpose(np.expand_dims(proc_image, axis=0), (0, 3, 1, 2))
+        pro_image = cv2.resize(converted_image, (self.input_shape[3], self.input_shape[2]))
+        proc_image = np.transpose(np.expand_dims(pro_image, axis=0), (0, 3, 1, 2))
         return proc_image
 
     def preprocess_output(self, outputs):

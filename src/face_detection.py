@@ -7,7 +7,7 @@ import os  # used to split the model location string
 import cv2
 import numpy as np
 import logging as log
-from openvino.inference_engine import IENetwork, IECore  # used to load the IE python API
+from openvino.inference_engine import IECore  # used to load the IE python API
 
 
 class FaceDetectionModel:
@@ -46,8 +46,8 @@ class FaceDetectionModel:
         self.ie = IECore()
         model_xml = self.model
         model_bin = os.path.splitext(model_xml)[0] + ".bin"
-        self.net = IENetwork(model=model_xml, weights=model_bin)
-        self.ex_net = self.ie.load_network(self.net)
+        self.net = self.ie.read_network(model=model_xml, weights=model_bin)
+        self.ex_net = self.ie.load_network(network=self.net, device_name=self.device)
 
         self.check_cpu_support()
 
@@ -118,7 +118,7 @@ class FaceDetectionModel:
         coords = coords[0] * np.array([image.shape[1], image.shape[0], image.shape[1], image.shape[0]])
         # irrespective of the current ndarray type, we will convert it to 32 bit integer
         coords = coords.astype(np.int32)
-        cropped = image[coords[1]:coords[3], coords[2]:coords[4]]
+        cropped = image[coords[1]:coords[3], coords[0]:coords[2]]
 
         return cropped, coords
 

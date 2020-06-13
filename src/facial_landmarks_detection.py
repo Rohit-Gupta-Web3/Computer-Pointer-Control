@@ -95,7 +95,7 @@ class FacialLandMarkDetectionModel:
         """
         self.output_shape = self.net.outputs[self.out].shape
 
-    def predict(self, image):
+    def predict(self, image, flag):
         """
                 This method is meant for running predictions on the input image.
         :param image: RGB image
@@ -112,7 +112,11 @@ class FacialLandMarkDetectionModel:
         left, left_coords = self.left_eye(coords, image)
         right, right_coords = self.right_eye(coords, image)
         eye_coords = [left_coords, right_coords]
-        return left, right, eye_coords
+        if flag == 2:
+            perf = self.ex_net.requests[0].get_perf_counts()
+            return left, right, eye_coords, perf
+        else:       
+            return left, right, eye_coords, {}
 
     @staticmethod
     def left_eye(coords, image):

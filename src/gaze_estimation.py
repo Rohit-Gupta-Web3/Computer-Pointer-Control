@@ -97,7 +97,7 @@ class GazeEstimationModel:
         """
         self.output_shape = self.net.outputs[self.out].shape
 
-    def predict(self, left, right, hpa):
+    def predict(self, left, right, hpa, flag):
         """
         This method is meant for running predictions on the input image.
         """
@@ -107,8 +107,11 @@ class GazeEstimationModel:
         out_put = self.ex_net.infer(
             {'head_pose_angles': hpa, 'left_eye_image': left_proc, 'right_eye_image': right_proc})
         mouse_coord, gaze = self.preprocess_output(out_put, hpa)
-
-        return mouse_coord, gaze
+        if flag == 4:
+            perf = self.ex_net.requests[0].get_perf_counts()
+            return mouse_coord, gaze, perf
+        else:       
+            return mouse_coord, gaze, {}
 
     def preprocess_input(self, left_image, right_image):
         """

@@ -97,7 +97,7 @@ class FaceDetectionModel:
         """
         self.output_shape = self.net.outputs[self.out].shape
 
-    def predict(self, image):
+    def predict(self, image, flag):
         """
                 This method is meant for running predictions on the input image.
         :param image: the input frame to be processed
@@ -119,8 +119,11 @@ class FaceDetectionModel:
         # irrespective of the current ndarray type, we will convert it to 32 bit integer
         coords = coords.astype(np.int32)
         cropped = image[coords[1]:coords[3], coords[0]:coords[2]]
-
-        return cropped, coords
+        if flag == 1:
+            perf = self.ex_net.requests[0].get_perf_counts()
+            return cropped, coords, perf
+        else:       
+            return cropped, coords, {}
 
     def preprocess_input(self, image):
         """

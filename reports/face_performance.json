@@ -1,0 +1,1642 @@
+{
+    "754_const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 0,
+        "layer_type": "Const"
+    },
+    "L0008_ActivationBin-back_bone_seq.conv2_2_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 1351,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 1351,
+        "execution_index": 17,
+        "layer_type": "FakeQuantize"
+    },
+    "Copy_L0008_ActivationBin-back_bone_seq.conv2_2_sep_relubin_bin_conv_BIN01/Input_1/Output_0/Data__const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 4,
+        "layer_type": "Const"
+    },
+    "L0014_Conv2d-back_bone_seq.conv3_1_sep-BIN": {
+        "real_time": 3069,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 3069,
+        "execution_index": 23,
+        "layer_type": "BinaryConvolution"
+    },
+    "conv4_3_norm_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 201,
+        "layer_type": "PriorBox"
+    },
+    "L0120_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 143,
+        "layer_type": "ReLU"
+    },
+    "L0036_Conv2d-back_bone_seq.conv5_2_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 46,
+        "layer_type": "Convolution"
+    },
+    "L0029_Conv2d-back_bone_seq.conv4_2_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 39,
+        "layer_type": "ScaleShift"
+    },
+    "L0074_Conv2d-loc_seq.conv6_2_mbox_loc": {
+        "real_time": 87,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 87,
+        "execution_index": 98,
+        "layer_type": "Convolution"
+    },
+    "L0004_Conv2d-back_bone_seq.conv2_1_sep_BN_nChw8c_nhwc_L0008_ActivationBin-back_bone_seq.conv2_2_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 1127,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 1127,
+        "execution_index": 16,
+        "layer_type": "Reorder"
+    },
+    "conv4_3_0_norm_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 190,
+        "layer_type": "PriorBox"
+    },
+    "mbox_conf_16": {
+        "real_time": 9,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 9,
+        "execution_index": 197,
+        "layer_type": "Concat"
+    },
+    "conv8_2_mbox_loc_perm": {
+        "real_time": 6,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 6,
+        "execution_index": 119,
+        "layer_type": "Permute"
+    },
+    "L0099_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 185,
+        "layer_type": "ReLU"
+    },
+    "784_const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 1,
+        "layer_type": "Const"
+    },
+    "L0118_Conv2d-conf_seq.conv7_2_mbox_conf_64.conv7_2_mbox_conf_64_nChw8c_nchw_conv7_2_mbox_conf_perm": {
+        "real_time": 5,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5,
+        "execution_index": 156,
+        "layer_type": "Reorder"
+    },
+    "L0048_ActivationBin-back_bone_seq.conv5_4_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 57,
+        "layer_type": "FakeQuantize"
+    },
+    "mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "ref_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 202,
+        "layer_type": "Concat"
+    },
+    "L0041_Conv2d-back_bone_seq.conv5_3_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 51,
+        "layer_type": "Convolution"
+    },
+    "L0039_Conv2d-back_bone_seq.conv5_2_sep-BIN": {
+        "real_time": 1229,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 1229,
+        "execution_index": 48,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0093_Conv2d-back_bone_seq.conv9_2_new_BN": {
+        "real_time": 6,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 6,
+        "execution_index": 126,
+        "layer_type": "Convolution"
+    },
+    "L0097_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 183,
+        "layer_type": "ReLU"
+    },
+    "L0069_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 93,
+        "layer_type": "ReLU"
+    },
+    "L0062_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 82,
+        "layer_type": "ReLU"
+    },
+    "fc7_mbox_conf_perm": {
+        "real_time": 20,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 20,
+        "execution_index": 177,
+        "layer_type": "Permute"
+    },
+    "L0126_Conv2d-conf_seq.conv9_2_mbox_conf_64.pre_conv9_2_mbox_conf_64_BN": {
+        "real_time": 2,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 2,
+        "execution_index": 135,
+        "layer_type": "Convolution"
+    },
+    "L0104_Conv2d-conf_preproc_seq.conv6_sep_relu.conv6_sep_reduce": {
+        "real_time": 24,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 24,
+        "execution_index": 171,
+        "layer_type": "Convolution"
+    },
+    "L0115_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 152,
+        "layer_type": "ReLU"
+    },
+    "L0024_Conv2d-back_bone_seq.conv4_1_sep-BIN": {
+        "real_time": 2284,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 2284,
+        "execution_index": 33,
+        "layer_type": "BinaryConvolution"
+    },
+    "fc7_mbox_loc_flat___mbox_loc": {
+        "real_time": 8,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 8,
+        "execution_index": 91,
+        "layer_type": "Reorder"
+    },
+    "conv7_2_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 3,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 159,
+        "layer_type": "Reorder"
+    },
+    "L0086_Conv2d-back_bone_seq.conv8_2_new_BN": {
+        "real_time": 15,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 15,
+        "execution_index": 116,
+        "layer_type": "Convolution"
+    },
+    "L0058_Conv2d-back_bone_seq.conv5_6_dw_BN": {
+        "real_time": 130,
+        "exec_type": "jit_avx2_dw_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 130,
+        "execution_index": 77,
+        "layer_type": "Convolution"
+    },
+    "conv4_3_norm_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 7,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 7,
+        "execution_index": 196,
+        "layer_type": "Reorder"
+    },
+    "L0029_Conv2d-back_bone_seq.conv4_2_sep-BIN": {
+        "real_time": 1135,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 1135,
+        "execution_index": 38,
+        "layer_type": "BinaryConvolution"
+    },
+    "fc7_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 178,
+        "layer_type": "Reshape"
+    },
+    "conv4_3_0_norm_mbox_conf_perm": {
+        "real_time": 27,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 27,
+        "execution_index": 187,
+        "layer_type": "Permute"
+    },
+    "L0000_Conv2d-back_bone_seq.conv1_BN": {
+        "real_time": 3631,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3631,
+        "execution_index": 9,
+        "layer_type": "Convolution"
+    },
+    "L0117_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 154,
+        "layer_type": "ReLU"
+    },
+    "L0123_Conv2d-conf_seq.conv8_2_mbox_conf_64.conv8_2_mbox_conf_64": {
+        "real_time": 3,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 146,
+        "layer_type": "Convolution"
+    },
+    "conv9_2_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 139,
+        "layer_type": "Reshape"
+    },
+    "L0001_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 10,
+        "layer_type": "ReLU"
+    },
+    "detection_out": {
+        "real_time": 1273,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 1273,
+        "execution_index": 203,
+        "layer_type": "DetectionOutput"
+    },
+    "conv9_2_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 3,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 140,
+        "layer_type": "Reorder"
+    },
+    "L0108_Conv2d-conf_seq.fc7_mbox_conf_64.fc7_mbox_conf_64_nChw8c_nchw_fc7_mbox_conf_perm": {
+        "real_time": 13,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 13,
+        "execution_index": 176,
+        "layer_type": "Reorder"
+    },
+    "conv8_2_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 148,
+        "layer_type": "Reshape"
+    },
+    "conv8_2_mbox_loc_flat___mbox_loc": {
+        "real_time": 3,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 121,
+        "layer_type": "Reorder"
+    },
+    "L0049_Conv2d-back_bone_seq.conv5_4_sep-BIN": {
+        "real_time": 766,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 766,
+        "execution_index": 58,
+        "layer_type": "BinaryConvolution"
+    },
+    "conv6_2_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 3,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 169,
+        "layer_type": "Reorder"
+    },
+    "conv7_2_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 158,
+        "layer_type": "Reshape"
+    },
+    "conv8_2_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 120,
+        "layer_type": "Reshape"
+    },
+    "L0025_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 35,
+        "layer_type": "ReLU"
+    },
+    "L0076_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 103,
+        "layer_type": "ReLU"
+    },
+    "conv4_3_0_norm_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 188,
+        "layer_type": "Reshape"
+    },
+    "mbox_loc": {
+        "real_time": 26,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 26,
+        "execution_index": 132,
+        "layer_type": "Concat"
+    },
+    "L0030_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 40,
+        "layer_type": "ReLU"
+    },
+    "conv6_2_mbox_loc_perm": {
+        "real_time": 9,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 9,
+        "execution_index": 99,
+        "layer_type": "Permute"
+    },
+    "L0028_ActivationBin-back_bone_seq.conv4_2_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 37,
+        "layer_type": "FakeQuantize"
+    },
+    "conv6_2_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 168,
+        "layer_type": "Reshape"
+    },
+    "L0095_Conv2d-loc_seq.conv9_2_mbox_loc": {
+        "real_time": 7,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 7,
+        "execution_index": 128,
+        "layer_type": "Convolution"
+    },
+    "L0081_Conv2d-loc_seq.conv7_2_mbox_loc": {
+        "real_time": 34,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 34,
+        "execution_index": 108,
+        "layer_type": "Convolution"
+    },
+    "L0054_Conv2d-back_bone_seq.conv5_5_sep-BIN_nhwc_nChw8c_L0058_Conv2d-back_bone_seq.conv5_6_dw_BN": {
+        "real_time": 100,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 100,
+        "execution_index": 76,
+        "layer_type": "Reorder"
+    },
+    "fc7_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 180,
+        "layer_type": "PriorBox"
+    },
+    "L0002_Conv2d-back_bone_seq.conv2_1_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 11,
+        "layer_type": "Convolution"
+    },
+    "L0019_Conv2d-back_bone_seq.conv3_2_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 29,
+        "layer_type": "ScaleShift"
+    },
+    "L0096_Conv2d-conf_preproc_seq.conv5_5_sep_relu.conv5_5_sep_reduce": {
+        "real_time": 123,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 123,
+        "execution_index": 182,
+        "layer_type": "Convolution"
+    },
+    "L0021_Conv2d-back_bone_seq.conv4_1_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 31,
+        "layer_type": "Convolution"
+    },
+    "conv8_2_mbox_conf_perm": {
+        "real_time": 12,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 12,
+        "execution_index": 147,
+        "layer_type": "Permute"
+    },
+    "L0107_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 174,
+        "layer_type": "ReLU"
+    },
+    "L0085_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 115,
+        "layer_type": "ReLU"
+    },
+    "L0044_Conv2d-back_bone_seq.conv5_3_sep-BIN": {
+        "real_time": 944,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 944,
+        "execution_index": 53,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0068_Conv2d-back_bone_seq.conv6_1_BN": {
+        "real_time": 122,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 122,
+        "execution_index": 92,
+        "layer_type": "Convolution"
+    },
+    "L0091_Conv2d-back_bone_seq.conv9_2_dw_BN": {
+        "real_time": 3,
+        "exec_type": "jit_avx2_dw_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 124,
+        "layer_type": "Convolution"
+    },
+    "L0034_Conv2d-back_bone_seq.conv5_1_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 44,
+        "layer_type": "ScaleShift"
+    },
+    "L0006_Conv2d-back_bone_seq.conv2_2_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 15,
+        "layer_type": "Convolution"
+    },
+    "L0061_Conv2d-back_bone_seq.conv5_6_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 81,
+        "layer_type": "ScaleShift"
+    },
+    "L0112_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 164,
+        "layer_type": "ReLU"
+    },
+    "conv7_2_mbox_conf_perm": {
+        "real_time": 6,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 6,
+        "execution_index": 157,
+        "layer_type": "Permute"
+    },
+    "conv9_2_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 141,
+        "layer_type": "PriorBox"
+    },
+    "L0127_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 136,
+        "layer_type": "ReLU"
+    },
+    "L0016_Conv2d-back_bone_seq.conv3_2_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 26,
+        "layer_type": "Convolution"
+    },
+    "conv4_3_0_norm_mbox_loc_perm": {
+        "real_time": 44,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 44,
+        "execution_index": 68,
+        "layer_type": "Permute"
+    },
+    "L0089_Conv2d-back_bone_seq.conv9_1_BN": {
+        "real_time": 9,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 9,
+        "execution_index": 122,
+        "layer_type": "Convolution"
+    },
+    "L0122_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 145,
+        "layer_type": "ReLU"
+    },
+    "L0005_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 14,
+        "layer_type": "ReLU"
+    },
+    "conv6_2_mbox_conf_perm": {
+        "real_time": 9,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 9,
+        "execution_index": 167,
+        "layer_type": "Permute"
+    },
+    "L0079_Conv2d-back_bone_seq.conv7_2_new_BN": {
+        "real_time": 19,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 19,
+        "execution_index": 106,
+        "layer_type": "Convolution"
+    },
+    "L0054_Conv2d-back_bone_seq.conv5_5_sep-BIN": {
+        "real_time": 401,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 401,
+        "execution_index": 63,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0082_Conv2d-back_bone_seq.conv8_1_BN": {
+        "real_time": 19,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 19,
+        "execution_index": 112,
+        "layer_type": "Convolution"
+    },
+    "L0077_Conv2d-back_bone_seq.conv7_2_dw_BN": {
+        "real_time": 9,
+        "exec_type": "jit_avx2_dw_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 9,
+        "execution_index": 104,
+        "layer_type": "Convolution"
+    },
+    "L0015_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 25,
+        "layer_type": "ReLU"
+    },
+    "conv7_2_mbox_loc_perm": {
+        "real_time": 6,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 6,
+        "execution_index": 109,
+        "layer_type": "Permute"
+    },
+    "Copy_L0008_ActivationBin-back_bone_seq.conv2_2_sep_relubin_bin_conv_BIN01/Input_1/Output_0/Data_1184_const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 3,
+        "layer_type": "Const"
+    },
+    "L0057_Conv2d-loc_seq.conv4_3_norm_mbox_loc": {
+        "real_time": 1144,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 1144,
+        "execution_index": 72,
+        "layer_type": "Convolution"
+    },
+    "L0035_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 45,
+        "layer_type": "ReLU"
+    },
+    "L0054_Conv2d-back_bone_seq.conv5_5_sep-BIN_nhwc_nChw8c_L0056_Conv2d-loc_seq.conv4_3_0_norm_mbox_loc": {
+        "real_time": 107,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 107,
+        "execution_index": 66,
+        "layer_type": "Reorder"
+    },
+    "L0088_Conv2d-loc_seq.conv8_2_mbox_loc": {
+        "real_time": 18,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 18,
+        "execution_index": 118,
+        "layer_type": "Convolution"
+    },
+    "L0114_Conv2d-conf_preproc_seq.conv7_2_new_relu.conv7_2_new_reduce": {
+        "real_time": 5,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5,
+        "execution_index": 151,
+        "layer_type": "Convolution"
+    },
+    "L0033_ActivationBin-back_bone_seq.conv5_1_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 42,
+        "layer_type": "FakeQuantize"
+    },
+    "conv6_2_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 100,
+        "layer_type": "Reshape"
+    },
+    "L0071_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 95,
+        "layer_type": "ReLU"
+    },
+    "L0058_Conv2d-back_bone_seq.conv5_6_dw_BN_nChw8c_nhwc_L0060_ActivationBin-back_bone_seq.conv5_6_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 23,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 23,
+        "execution_index": 78,
+        "layer_type": "Reorder"
+    },
+    "conv9_2_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 130,
+        "layer_type": "Reshape"
+    },
+    "L0108_Conv2d-conf_seq.fc7_mbox_conf_64.fc7_mbox_conf_64": {
+        "real_time": 26,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 26,
+        "execution_index": 175,
+        "layer_type": "Convolution"
+    },
+    "L0045_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 55,
+        "layer_type": "ReLU"
+    },
+    "L0061_Conv2d-back_bone_seq.conv5_6_sep-BIN": {
+        "real_time": 174,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 174,
+        "execution_index": 80,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0023_ActivationBin-back_bone_seq.conv4_1_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 32,
+        "layer_type": "FakeQuantize"
+    },
+    "L0106_Conv2d-conf_seq.fc7_mbox_conf_64.pre_fc7_mbox_conf_64_BN": {
+        "real_time": 26,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 26,
+        "execution_index": 173,
+        "layer_type": "Convolution"
+    },
+    "L0066_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 87,
+        "layer_type": "ReLU"
+    },
+    "L0046_Conv2d-back_bone_seq.conv5_4_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 56,
+        "layer_type": "Convolution"
+    },
+    "L0078_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 105,
+        "layer_type": "ReLU"
+    },
+    "conv4_3_0_norm_mbox_loc_flat___mbox_loc": {
+        "real_time": 16,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 16,
+        "execution_index": 70,
+        "layer_type": "Reorder"
+    },
+    "L0092_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 125,
+        "layer_type": "ReLU"
+    },
+    "L0044_Conv2d-back_bone_seq.conv5_3_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 54,
+        "layer_type": "ScaleShift"
+    },
+    "conv4_3_norm_mbox_loc_perm": {
+        "real_time": 43,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 43,
+        "execution_index": 73,
+        "layer_type": "Permute"
+    },
+    "L0121_Conv2d-conf_seq.conv8_2_mbox_conf_64.pre_conv8_2_mbox_conf_64_BN": {
+        "real_time": 3,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 144,
+        "layer_type": "Convolution"
+    },
+    "L0014_Conv2d-back_bone_seq.conv3_1_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 24,
+        "layer_type": "ScaleShift"
+    },
+    "mbox_conf_flatten": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 200,
+        "layer_type": "Reshape"
+    },
+    "L0003_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 12,
+        "layer_type": "ReLU"
+    },
+    "conv4_3_norm_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 74,
+        "layer_type": "Reshape"
+    },
+    "L0067_Conv2d-loc_seq.fc7_mbox_loc": {
+        "real_time": 233,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 233,
+        "execution_index": 88,
+        "layer_type": "Convolution"
+    },
+    "conv9_2_mbox_loc_perm": {
+        "real_time": 5,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5,
+        "execution_index": 129,
+        "layer_type": "Permute"
+    },
+    "L0060_ActivationBin-back_bone_seq.conv5_6_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 27,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 27,
+        "execution_index": 79,
+        "layer_type": "FakeQuantize"
+    },
+    "L0038_ActivationBin-back_bone_seq.conv5_2_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 47,
+        "layer_type": "FakeQuantize"
+    },
+    "conv7_2_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 160,
+        "layer_type": "PriorBox"
+    },
+    "L0026_Conv2d-back_bone_seq.conv4_2_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 36,
+        "layer_type": "Convolution"
+    },
+    "L0039_Conv2d-back_bone_seq.conv5_2_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 49,
+        "layer_type": "ScaleShift"
+    },
+    "L0065_Conv2d-back_bone_seq.conv6_sep_BN": {
+        "real_time": 236,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 236,
+        "execution_index": 86,
+        "layer_type": "Convolution"
+    },
+    "data": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 7,
+        "layer_type": "Input"
+    },
+    "L0073_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 97,
+        "layer_type": "ReLU"
+    },
+    "L0063_Conv2d-back_bone_seq.conv6_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 83,
+        "layer_type": "Convolution"
+    },
+    "out_detection_out": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 204,
+        "layer_type": "Output"
+    },
+    "L0103_Conv2d-conf_seq.conv4_3_norm_mbox_conf_64.conv4_3_norm_mbox_conf_64": {
+        "real_time": 129,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 129,
+        "execution_index": 193,
+        "layer_type": "Convolution"
+    },
+    "L0098_Conv2d-conf_seq.conv4_3_0_norm_mbox_conf_64.pre_conv4_3_0_norm_mbox_conf_64_BN": {
+        "real_time": 100,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 100,
+        "execution_index": 184,
+        "layer_type": "Convolution"
+    },
+    "L0119_Conv2d-conf_preproc_seq.conv8_2_new_relu.conv8_2_new_reduce": {
+        "real_time": 4,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 4,
+        "execution_index": 142,
+        "layer_type": "Convolution"
+    },
+    "L0124_Conv2d-conf_preproc_seq.conv9_2_new_relu.conv9_2_new_reduce": {
+        "real_time": 4,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 4,
+        "execution_index": 133,
+        "layer_type": "Convolution"
+    },
+    "fc7_mbox_loc_perm": {
+        "real_time": 20,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 20,
+        "execution_index": 89,
+        "layer_type": "Permute"
+    },
+    "L0018_ActivationBin-back_bone_seq.conv3_2_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 27,
+        "layer_type": "FakeQuantize"
+    },
+    "conv6_2_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 170,
+        "layer_type": "PriorBox"
+    },
+    "L0009_Conv2d-back_bone_seq.conv2_2_sep-BIN": {
+        "real_time": 3091,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 3091,
+        "execution_index": 18,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0054_Conv2d-back_bone_seq.conv5_5_sep-BIN_nhwc_nChw8c_L0096_Conv2d-conf_preproc_seq.conv5_5_sep_relu.conv5_5_sep_reduce": {
+        "real_time": 117,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 117,
+        "execution_index": 181,
+        "layer_type": "Reorder"
+    },
+    "L0072_Conv2d-back_bone_seq.conv6_2_new_BN": {
+        "real_time": 47,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 47,
+        "execution_index": 96,
+        "layer_type": "Convolution"
+    },
+    "fc7_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 90,
+        "layer_type": "Reshape"
+    },
+    "L0070_Conv2d-back_bone_seq.conv6_2_dw_BN": {
+        "real_time": 21,
+        "exec_type": "jit_avx2_dw_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 21,
+        "execution_index": 94,
+        "layer_type": "Convolution"
+    },
+    "L0053_ActivationBin-back_bone_seq.conv5_5_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 62,
+        "layer_type": "FakeQuantize"
+    },
+    "L0004_Conv2d-back_bone_seq.conv2_1_sep_BN": {
+        "real_time": 5677,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5677,
+        "execution_index": 13,
+        "layer_type": "Convolution"
+    },
+    "L0054_Conv2d-back_bone_seq.conv5_5_sep-BIN_nhwc_nChw8c_L0057_Conv2d-loc_seq.conv4_3_norm_mbox_loc": {
+        "real_time": 116,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 116,
+        "execution_index": 71,
+        "layer_type": "Reorder"
+    },
+    "conv6_2_mbox_loc_flat___mbox_loc": {
+        "real_time": 4,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 4,
+        "execution_index": 101,
+        "layer_type": "Reorder"
+    },
+    "L0024_Conv2d-back_bone_seq.conv4_1_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 34,
+        "layer_type": "ScaleShift"
+    },
+    "L0020_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 30,
+        "layer_type": "ReLU"
+    },
+    "L0043_ActivationBin-back_bone_seq.conv5_3_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 52,
+        "layer_type": "FakeQuantize"
+    },
+    "L0094_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 127,
+        "layer_type": "ReLU"
+    },
+    "L0105_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 172,
+        "layer_type": "ReLU"
+    },
+    "L0111_Conv2d-conf_seq.conv6_2_mbox_conf_64.pre_conv6_2_mbox_conf_64_BN": {
+        "real_time": 18,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 18,
+        "execution_index": 163,
+        "layer_type": "Convolution"
+    },
+    "mbox_conf_softmax": {
+        "real_time": 620,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 620,
+        "execution_index": 199,
+        "layer_type": "SoftMax"
+    },
+    "conv4_3_0_norm_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 7,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 7,
+        "execution_index": 189,
+        "layer_type": "Reorder"
+    },
+    "L0009_Conv2d-back_bone_seq.conv2_2_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 19,
+        "layer_type": "ScaleShift"
+    },
+    "Mul1_/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 481,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 481,
+        "execution_index": 8,
+        "layer_type": "ScaleShift"
+    },
+    "conv4_3_norm_mbox_loc_flat___mbox_loc": {
+        "real_time": 12,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 12,
+        "execution_index": 75,
+        "layer_type": "Reorder"
+    },
+    "L0075_Conv2d-back_bone_seq.conv7_1_BN": {
+        "real_time": 41,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 41,
+        "execution_index": 102,
+        "layer_type": "Convolution"
+    },
+    "conv4_3_0_norm_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 69,
+        "layer_type": "Reshape"
+    },
+    "L0034_Conv2d-back_bone_seq.conv5_1_sep-BIN": {
+        "real_time": 1281,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 1281,
+        "execution_index": 43,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0055_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 65,
+        "layer_type": "ReLU"
+    },
+    "conv8_2_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 3,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 149,
+        "layer_type": "Reorder"
+    },
+    "L0118_Conv2d-conf_seq.conv7_2_mbox_conf_64.conv7_2_mbox_conf_64": {
+        "real_time": 5,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5,
+        "execution_index": 155,
+        "layer_type": "Convolution"
+    },
+    "L0054_Conv2d-back_bone_seq.conv5_5_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 64,
+        "layer_type": "ScaleShift"
+    },
+    "L0080_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 107,
+        "layer_type": "ReLU"
+    },
+    "L0113_Conv2d-conf_seq.conv6_2_mbox_conf_64.conv6_2_mbox_conf_64_nChw8c_nchw_conv6_2_mbox_conf_perm": {
+        "real_time": 6,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 6,
+        "execution_index": 166,
+        "layer_type": "Reorder"
+    },
+    "conv9_2_mbox_conf_perm": {
+        "real_time": 6,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 6,
+        "execution_index": 138,
+        "layer_type": "Permute"
+    },
+    "L0050_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 60,
+        "layer_type": "ReLU"
+    },
+    "L0010_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 20,
+        "layer_type": "ReLU"
+    },
+    "L0051_Conv2d-back_bone_seq.conv5_5_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 61,
+        "layer_type": "Convolution"
+    },
+    "L0116_Conv2d-conf_seq.conv7_2_mbox_conf_64.pre_conv7_2_mbox_conf_64_BN": {
+        "real_time": 4,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 4,
+        "execution_index": 153,
+        "layer_type": "Convolution"
+    },
+    "L0064_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 84,
+        "layer_type": "ReLU"
+    },
+    "conv7_2_mbox_loc_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 110,
+        "layer_type": "Reshape"
+    },
+    "conv7_2_mbox_loc_flat___mbox_loc": {
+        "real_time": 4,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 4,
+        "execution_index": 111,
+        "layer_type": "Reorder"
+    },
+    "Copy_L0060_ActivationBin-back_bone_seq.conv5_6_sep_relubin_bin_conv_BIN01/Input_1/Output_0/Data__const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 6,
+        "layer_type": "Const"
+    },
+    "L0090_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 123,
+        "layer_type": "ReLU"
+    },
+    "L0109_Conv2d-conf_preproc_seq.conv6_2_new_relu.conv6_2_new_reduce": {
+        "real_time": 11,
+        "exec_type": "jit_avx2_1x1_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 11,
+        "execution_index": 161,
+        "layer_type": "Convolution"
+    },
+    "L0128_Conv2d-conf_seq.conv9_2_mbox_conf_64.conv9_2_mbox_conf_64": {
+        "real_time": 3,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 137,
+        "layer_type": "Convolution"
+    },
+    "fc7_mbox_conf_flat___mbox_conf_16": {
+        "real_time": 5,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5,
+        "execution_index": 179,
+        "layer_type": "Reorder"
+    },
+    "L0125_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 134,
+        "layer_type": "ReLU"
+    },
+    "L0061_Conv2d-back_bone_seq.conv5_6_sep-BIN_nhwc_nChw8c_L0065_Conv2d-back_bone_seq.conv6_sep_BN": {
+        "real_time": 27,
+        "exec_type": "jit_uni_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 27,
+        "execution_index": 85,
+        "layer_type": "Reorder"
+    },
+    "L0013_ActivationBin-back_bone_seq.conv3_1_sep_relubin_bin_conv_BIN01/Quantize_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 22,
+        "layer_type": "FakeQuantize"
+    },
+    "L0100_Conv2d-conf_seq.conv4_3_0_norm_mbox_conf_64.conv4_3_0_norm_mbox_conf_64": {
+        "real_time": 79,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 79,
+        "execution_index": 186,
+        "layer_type": "Convolution"
+    },
+    "conv4_3_norm_mbox_conf_perm": {
+        "real_time": 26,
+        "exec_type": "unknown_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 26,
+        "execution_index": 194,
+        "layer_type": "Permute"
+    },
+    "mbox_conf_reshape": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 198,
+        "layer_type": "Reshape"
+    },
+    "conv8_2_mbox_priorbox": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 150,
+        "layer_type": "PriorBox"
+    },
+    "L0084_Conv2d-back_bone_seq.conv8_2_dw_BN": {
+        "real_time": 5,
+        "exec_type": "jit_avx2_dw_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 5,
+        "execution_index": 114,
+        "layer_type": "Convolution"
+    },
+    "L0049_Conv2d-back_bone_seq.conv5_4_sep-BINMul/After/Fused_Mul_/FusedScaleShift_": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 59,
+        "layer_type": "ScaleShift"
+    },
+    "L0113_Conv2d-conf_seq.conv6_2_mbox_conf_64.conv6_2_mbox_conf_64": {
+        "real_time": 9,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 9,
+        "execution_index": 165,
+        "layer_type": "Convolution"
+    },
+    "L0056_Conv2d-loc_seq.conv4_3_0_norm_mbox_loc": {
+        "real_time": 1124,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 1124,
+        "execution_index": 67,
+        "layer_type": "Convolution"
+    },
+    "L0031_Conv2d-back_bone_seq.conv5_1_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 41,
+        "layer_type": "Convolution"
+    },
+    "L0102_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 192,
+        "layer_type": "ReLU"
+    },
+    "conv4_3_norm_mbox_conf_flat": {
+        "real_time": 0,
+        "exec_type": "unknown_FP32",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 195,
+        "layer_type": "Reshape"
+    },
+    "L0040_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 50,
+        "layer_type": "ReLU"
+    },
+    "L0101_Conv2d-conf_seq.conv4_3_norm_mbox_conf_64.pre_conv4_3_norm_mbox_conf_64_BN": {
+        "real_time": 98,
+        "exec_type": "jit_avx2_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 98,
+        "execution_index": 191,
+        "layer_type": "Convolution"
+    },
+    "Copy_L0060_ActivationBin-back_bone_seq.conv5_6_sep_relubin_bin_conv_BIN01/Input_1/Output_0/Data_1190_const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 5,
+        "layer_type": "Const"
+    },
+    "L0011_Conv2d-back_bone_seq.conv3_1_dw_BN": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 21,
+        "layer_type": "Convolution"
+    },
+    "L0019_Conv2d-back_bone_seq.conv3_2_sep-BIN": {
+        "real_time": 2243,
+        "exec_type": "jit_avx2_BIN",
+        "status": "EXECUTED",
+        "cpu_time": 2243,
+        "execution_index": 28,
+        "layer_type": "BinaryConvolution"
+    },
+    "L0110_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 162,
+        "layer_type": "ReLU"
+    },
+    "786_const": {
+        "real_time": 0,
+        "exec_type": "unknown",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 2,
+        "layer_type": "Const"
+    },
+    "conv9_2_mbox_loc_flat___mbox_loc": {
+        "real_time": 3,
+        "exec_type": "ref_any_FP32",
+        "status": "EXECUTED",
+        "cpu_time": 3,
+        "execution_index": 131,
+        "layer_type": "Reorder"
+    },
+    "L0083_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 113,
+        "layer_type": "ReLU"
+    },
+    "L0087_ReLU-back_bone_seq.conv1_relu": {
+        "real_time": 0,
+        "exec_type": "undef",
+        "status": "NOT_RUN",
+        "cpu_time": 0,
+        "execution_index": 117,
+        "layer_type": "ReLU"
+    }
+}

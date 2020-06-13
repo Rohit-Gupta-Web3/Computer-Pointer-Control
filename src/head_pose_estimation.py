@@ -95,7 +95,7 @@ class HeadPoseEstimationModel:
         """
         self.output_shape = self.net.outputs[self.out].shape
 
-    def predict(self, image):
+    def predict(self, image, flag):
         """
                 This method is meant for running predictions on the input image.
         :param image:
@@ -106,7 +106,11 @@ class HeadPoseEstimationModel:
         proc_img = self.preprocess_input(image.copy())
         out_put = self.ex_net.infer({self.inp: proc_img})
         proc_out = self.preprocess_output(out_put)
-        return proc_out
+        if flag == 3:
+            perf = self.ex_net.requests[0].get_perf_counts()
+            return proc_out, perf
+        else:       
+            return proc_out, {}
 
     def preprocess_output(self, outputs):
         """

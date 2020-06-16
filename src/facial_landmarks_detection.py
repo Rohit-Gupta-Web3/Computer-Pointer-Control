@@ -15,7 +15,7 @@ class FacialLandMarkDetectionModel:
             Class for the Face Detection Model.
     """
 
-    def __init__(self, model_name, device='CPU', extensions=None):
+    def __init__(self, model_name, device="CPU", extensions=None):
         """
                 This method intends to initialize all the attributes of the class
         :param model_name: The name of model .xml file
@@ -61,13 +61,17 @@ class FacialLandMarkDetectionModel:
         unsupported = self.supported_layers
         if len(unsupported) != 0 and "CPU" in self.device:
             if self.extension is None:
-                log.error("please provide the link to CPU extension, in order to run unsupported layers")
+                log.error(
+                    "please provide the link to CPU extension, in order to run unsupported layers"
+                )
                 exit(1)
             else:
                 self.ie.add_extension(self.extension, "CPU")
                 unsupported = self.supported_layers
                 if len(unsupported) != 0:
-                    log.error("Needs to exit, as some layers were unable to run on CPU as well")
+                    log.error(
+                        "Needs to exit, as some layers were unable to run on CPU as well"
+                    )
                 else:
                     exit(1)
 
@@ -77,8 +81,12 @@ class FacialLandMarkDetectionModel:
                 this function intends to find the unsupported layers on the given device
         :return: list of unsupported layers
         """
-        self.supported = self.ie.query_network(network=self.net, device_name=self.device)
-        unsupported_layers = [layer for layer in self.net.layers.keys() if layer not in self.supported]
+        self.supported = self.ie.query_network(
+            network=self.net, device_name=self.device
+        )
+        unsupported_layers = [
+            layer for layer in self.net.layers.keys() if layer not in self.supported
+        ]
         return unsupported_layers
 
     def get_input_shape(self):
@@ -107,7 +115,9 @@ class FacialLandMarkDetectionModel:
         pre_process_input = self.preprocess_input(img)
         out_put = self.ex_net.infer({self.inp: pre_process_input})
         coords = self.preprocess_output(out_put)
-        coords = coords * np.array([image.shape[1], image.shape[0], image.shape[1], image.shape[0]])
+        coords = coords * np.array(
+            [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]
+        )
         coords = coords.astype(np.int32)
         left, left_coords = self.left_eye(coords, image)
         right, right_coords = self.right_eye(coords, image)
@@ -115,7 +125,7 @@ class FacialLandMarkDetectionModel:
         if flag == 2:
             perf = self.ex_net.requests[0].get_perf_counts()
             return left, right, eye_coords, perf
-        else:       
+        else:
             return left, right, eye_coords, {}
 
     @staticmethod
@@ -155,7 +165,9 @@ class FacialLandMarkDetectionModel:
         """
         # since the model require BGR image and we provide RGB, so we need to convert it to BGR
         converted_image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        pro_image = cv2.resize(converted_image, (self.input_shape[3], self.input_shape[2]))
+        pro_image = cv2.resize(
+            converted_image, (self.input_shape[3], self.input_shape[2])
+        )
         proc_image = np.transpose(np.expand_dims(pro_image, axis=0), (0, 3, 1, 2))
         return proc_image
 

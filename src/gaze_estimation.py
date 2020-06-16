@@ -16,7 +16,7 @@ class GazeEstimationModel:
             Class for the Face Detection Model.
     """
 
-    def __init__(self, model_name, device='CPU', extensions=None):
+    def __init__(self, model_name, device="CPU", extensions=None):
         """
                 This method intends to initialize all the attributes of the class
         :param model_name: The name of model .xml file
@@ -63,13 +63,17 @@ class GazeEstimationModel:
         unsupported = self.supported_layers
         if len(unsupported) != 0 and "CPU" in self.device:
             if self.extension is None:
-                log.error("please provide the link to CPU extension, in order to run unsupported layers")
+                log.error(
+                    "please provide the link to CPU extension, in order to run unsupported layers"
+                )
                 exit(1)
             else:
                 self.ie.add_extension(self.extension, "CPU")
                 unsupported = self.supported_layers
                 if len(unsupported) != 0:
-                    log.error("Needs to exit, as some layers were unable to run on CPU as well")
+                    log.error(
+                        "Needs to exit, as some layers were unable to run on CPU as well"
+                    )
                 else:
                     exit(1)
 
@@ -79,8 +83,12 @@ class GazeEstimationModel:
                 this function intends to find the unsupported layers on the given device
         :return: list of unsupported layers
         """
-        self.supported = self.ie.query_network(network=self.net, device_name=self.device)
-        unsupported_layers = [layer for layer in self.net.layers.keys() if layer not in self.supported]
+        self.supported = self.ie.query_network(
+            network=self.net, device_name=self.device
+        )
+        unsupported_layers = [
+            layer for layer in self.net.layers.keys() if layer not in self.supported
+        ]
         return unsupported_layers
 
     def get_input_shape(self):
@@ -105,12 +113,17 @@ class GazeEstimationModel:
         self.get_output_shape()
         left_proc, right_proc = self.preprocess_input(left.copy(), right.copy())
         out_put = self.ex_net.infer(
-            {'head_pose_angles': hpa, 'left_eye_image': left_proc, 'right_eye_image': right_proc})
+            {
+                "head_pose_angles": hpa,
+                "left_eye_image": left_proc,
+                "right_eye_image": right_proc,
+            }
+        )
         mouse_coord, gaze = self.preprocess_output(out_put, hpa)
         if flag == 4:
             perf = self.ex_net.requests[0].get_perf_counts()
             return mouse_coord, gaze, perf
-        else:       
+        else:
             return mouse_coord, gaze, {}
 
     def preprocess_input(self, left_image, right_image):

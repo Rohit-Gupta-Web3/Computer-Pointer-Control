@@ -15,7 +15,7 @@ class FaceDetectionModel:
         Class for the Face Detection Model.
     """
 
-    def __init__(self, model_name, device='CPU', extensions=None, prob_thresh=0.5):
+    def __init__(self, model_name, device="CPU", extensions=None, prob_thresh=0.5):
         """
                 This method intends to initialize all the attributes of the class
         :param model_name: The name of model .xml file
@@ -63,13 +63,17 @@ class FaceDetectionModel:
         unsupported = self.supported_layers
         if len(unsupported) != 0 and "CPU" in self.device:
             if self.extension is None:
-                log.info("please provide the link to CPU extension, in order to run unsupported layers")
+                log.info(
+                    "please provide the link to CPU extension, in order to run unsupported layers"
+                )
                 exit(1)
             else:
                 self.ie.add_extension(self.extension, "CPU")
                 unsupported = self.supported_layers
                 if len(unsupported) != 0:
-                    log.info("Needs to exit, as some layers were unable to run on CPU as well")
+                    log.info(
+                        "Needs to exit, as some layers were unable to run on CPU as well"
+                    )
                 else:
                     exit(1)
 
@@ -79,8 +83,12 @@ class FaceDetectionModel:
                 this function intends to find the unsupported layers on the given device
         :return: list of unsupported layers
         """
-        self.supported = self.ie.query_network(network=self.net, device_name=self.device)
-        unsupported_layers = [layer for layer in self.net.layers.keys() if layer not in self.supported]
+        self.supported = self.ie.query_network(
+            network=self.net, device_name=self.device
+        )
+        unsupported_layers = [
+            layer for layer in self.net.layers.keys() if layer not in self.supported
+        ]
         return unsupported_layers
 
     def get_input_shape(self):
@@ -115,14 +123,16 @@ class FaceDetectionModel:
         # if object not detected return none and exit out of the function
         if len(coords) == 0:
             return 0, 0
-        coords = coords[0] * np.array([image.shape[1], image.shape[0], image.shape[1], image.shape[0]])
+        coords = coords[0] * np.array(
+            [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]
+        )
         # irrespective of the current ndarray type, we will convert it to 32 bit integer
         coords = coords.astype(np.int32)
-        cropped = image[coords[1]:coords[3], coords[0]:coords[2]]
+        cropped = image[coords[1] : coords[3], coords[0] : coords[2]]
         if flag == 1:
             perf = self.ex_net.requests[0].get_perf_counts()
             return cropped, coords, perf
-        else:       
+        else:
             return cropped, coords, {}
 
     def preprocess_input(self, image):

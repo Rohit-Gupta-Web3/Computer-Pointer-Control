@@ -19,41 +19,86 @@ def build_argparser():
     """
     parser = ArgumentParser()
 
-    parser.add_argument("-f", "--face_detection_model", required=True, type=str,
-                        help="Path to an .xml file with Face Detection model.")
-    parser.add_argument("-fl", "--facial_landmark_model", required=True, type=str,
-                        help="Path to an .xml file with Facial Landmark Detection model.")
-    parser.add_argument("-hp", "--head_pose_model", required=True, type=str,
-                        help="Path to an .xml file with Head Pose Estimation model.")
-    parser.add_argument("-g", "--gaze_estimation_model", required=True, type=str,
-                        help="Path to an .xml file with Gaze Estimation model.")
+    parser.add_argument(
+        "-f",
+        "--face_detection_model",
+        required=True,
+        type=str,
+        help="Path to an .xml file with Face Detection model.",
+    )
+    parser.add_argument(
+        "-fl",
+        "--facial_landmark_model",
+        required=True,
+        type=str,
+        help="Path to an .xml file with Facial Landmark Detection model.",
+    )
+    parser.add_argument(
+        "-hp",
+        "--head_pose_model",
+        required=True,
+        type=str,
+        help="Path to an .xml file with Head Pose Estimation model.",
+    )
+    parser.add_argument(
+        "-g",
+        "--gaze_estimation_model",
+        required=True,
+        type=str,
+        help="Path to an .xml file with Gaze Estimation model.",
+    )
 
-    parser.add_argument("-i", "--input", required=True, type=str,
-                        help="Path to image or video file or CAM")
+    parser.add_argument(
+        "-i",
+        "--input",
+        required=True,
+        type=str,
+        help="Path to image or video file or CAM",
+    )
 
-    parser.add_argument("-l", "--cpu_extension", required=False, type=str,
-                        default=None,
-                        help="MKLDNN (CPU)-targeted custom layers."
-                             "Absolute path to a shared library with the"
-                             "kernels impl.")
+    parser.add_argument(
+        "-l",
+        "--cpu_extension",
+        required=False,
+        type=str,
+        default=None,
+        help="MKLDNN (CPU)-targeted custom layers."
+        "Absolute path to a shared library with the"
+        "kernels impl.",
+    )
 
-    parser.add_argument("-pt", "--prob_threshold", required=False, type=float,
-                        default=0.6,
-                        help="Probability threshold for detection fitering.")
+    parser.add_argument(
+        "-pt",
+        "--prob_threshold",
+        required=False,
+        type=float,
+        default=0.6,
+        help="Probability threshold for detection fitering.",
+    )
 
-    parser.add_argument("-fg", "--perf_flag", required=False, type=int,
-                        default=False,
-                        help='Return the performance of individual layers'
-				"1 for face detection"
-				"2 for Facial landmark detection"
-				"3 for Head Pose Estimation"
-				"4 for Gaze Estimation")
+    parser.add_argument(
+        "-fg",
+        "--perf_flag",
+        required=False,
+        type=int,
+        default=False,
+        help="Return the performance of individual layers"
+        "1 for face detection"
+        "2 for Facial landmark detection"
+        "3 for Head Pose Estimation"
+        "4 for Gaze Estimation",
+    )
 
-    parser.add_argument("-d", "--device", type=str, default="CPU",
-                        help='Specify the target device to infer on: '
-                             'CPU, GPU, FPGA or MYRIAD is acceptable. Sample '
-                             'will look for a suitable plugin for device '
-                             'specified (CPU by default)')
+    parser.add_argument(
+        "-d",
+        "--device",
+        type=str,
+        default="CPU",
+        help="Specify the target device to infer on: "
+        "CPU, GPU, FPGA or MYRIAD is acceptable. Sample "
+        "will look for a suitable plugin for device "
+        "specified (CPU by default)",
+    )
 
     return parser
 
@@ -64,13 +109,13 @@ def check(args):
     :param args:
     :return: InputFeeder object
     """
-    if args.input == 'CAM':
-        in_put_feeder = InputFeeder('CAM')
+    if args.input == "CAM":
+        in_put_feeder = InputFeeder("CAM")
     else:
         if not os.path.isfile(args.input):
             log.error("Unable to locate the file")
             exit(1)
-        in_put_feeder = InputFeeder("video",args.input)
+        in_put_feeder = InputFeeder("video", args.input)
     return in_put_feeder
 
 
@@ -84,7 +129,7 @@ def check_input_files(file):
         print(file + " was not able to load")
         return 1
     else:
-        return 0    
+        return 0
 
 
 def loader(in_put_feeder, fdm, fldm, gem, hpem):
@@ -116,15 +161,26 @@ def main():
     in_put_feeder = check(args)
 
     if check_input_files(args.face_detection_model) == 0:
-        fdm = FaceDetectionModel(args.face_detection_model, args.device, args.cpu_extension, args.prob_threshold)
+        fdm = FaceDetectionModel(
+            args.face_detection_model,
+            args.device,
+            args.cpu_extension,
+            args.prob_threshold,
+        )
     if check_input_files(args.facial_landmark_model) == 0:
-        fldm = FacialLandMarkDetectionModel(args.facial_landmark_model, args.device, args.cpu_extension)
+        fldm = FacialLandMarkDetectionModel(
+            args.facial_landmark_model, args.device, args.cpu_extension
+        )
     if check_input_files(args.gaze_estimation_model) == 0:
-        gem = GazeEstimationModel(args.gaze_estimation_model, args.device, args.cpu_extension)
+        gem = GazeEstimationModel(
+            args.gaze_estimation_model, args.device, args.cpu_extension
+        )
     if check_input_files(args.head_pose_model) == 0:
-        hpem = HeadPoseEstimationModel(args.head_pose_model, args.device, args.cpu_extension)
+        hpem = HeadPoseEstimationModel(
+            args.head_pose_model, args.device, args.cpu_extension
+        )
 
-    mouse = MouseController('medium', 'fast')
+    mouse = MouseController("medium", "fast")
 
     loader(in_put_feeder, fdm, fldm, gem, hpem)
 
@@ -135,7 +191,7 @@ def main():
             break
         frame_c += 1
         if frame_c % 5 == 0:
-            cv2.imshow('Video', cv2.resize(frame, (500, 500)))
+            cv2.imshow("Video", cv2.resize(frame, (500, 500)))
 
         key = cv2.waitKey(60)
         face, control, perf_f = fdm.predict(frame.copy(), args.perf_flag)
@@ -155,24 +211,24 @@ def main():
         if key == 27:
             break
 
-    if not args.perf_flag==0:
+    if not args.perf_flag == 0:
         os.chdir("../reports/")
-        if not len(perf_f)==0:
-                f = open("face_performance.json", "w")
-                f.write(json.dumps(perf_f, indent=4))
-                f.close() 
-        if not len(perf_h)==0:
-                f = open("head_performance.json", "w")
-                f.write(json.dumps(perf_h, indent=4))
-                f.close() 
-        if not len(perf_l)==0:
-                f = open("facial_performance.json", "w")
-                f.write(json.dumps(perf_l, indent=4))
-                f.close() 
-        if not len(perf_g)==0:
-                f = open("gaze_performance.json", "w")
-                f.write(json.dumps(perf_g, indent=4))
-                f.close() 
+        if not len(perf_f) == 0:
+            f = open("face_performance.json", "w")
+            f.write(json.dumps(perf_f, indent=4))
+            f.close()
+        if not len(perf_h) == 0:
+            f = open("head_performance.json", "w")
+            f.write(json.dumps(perf_h, indent=4))
+            f.close()
+        if not len(perf_l) == 0:
+            f = open("facial_performance.json", "w")
+            f.write(json.dumps(perf_l, indent=4))
+            f.close()
+        if not len(perf_g) == 0:
+            f = open("gaze_performance.json", "w")
+            f.write(json.dumps(perf_g, indent=4))
+            f.close()
 
     cv2.destroyAllWindows()
     in_put_feeder.close()

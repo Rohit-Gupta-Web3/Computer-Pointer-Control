@@ -15,7 +15,7 @@ class HeadPoseEstimationModel:
             Class for the Face Detection Model.
     """
 
-    def __init__(self, model_name, device='CPU', extensions=None):
+    def __init__(self, model_name, device="CPU", extensions=None):
         """
                 This method intends to initialize all the attributes of the class
         :param model_name: The name of model .xml file
@@ -61,13 +61,17 @@ class HeadPoseEstimationModel:
         unsupported = self.supported_layers
         if len(unsupported) != 0 and "CPU" in self.device:
             if self.extension is None:
-                log.error("please provide the link to CPU extension, in order to run unsupported layers")
+                log.error(
+                    "please provide the link to CPU extension, in order to run unsupported layers"
+                )
                 exit(1)
             else:
                 self.ie.add_extension(self.extension, "CPU")
                 unsupported = self.supported_layers
                 if len(unsupported) != 0:
-                    log.error("Needs to exit, as some layers were unable to run on CPU as well")
+                    log.error(
+                        "Needs to exit, as some layers were unable to run on CPU as well"
+                    )
                 else:
                     exit(1)
 
@@ -77,8 +81,12 @@ class HeadPoseEstimationModel:
                 this function intends to find the unsupported layers on the given device
         :return: list of unsupported layers
         """
-        self.supported = self.ie.query_network(network=self.net, device_name=self.device)
-        unsupported_layers = [layer for layer in self.net.layers.keys() if layer not in self.supported]
+        self.supported = self.ie.query_network(
+            network=self.net, device_name=self.device
+        )
+        unsupported_layers = [
+            layer for layer in self.net.layers.keys() if layer not in self.supported
+        ]
         return unsupported_layers
 
     def get_input_shape(self):
@@ -109,7 +117,7 @@ class HeadPoseEstimationModel:
         if flag == 3:
             perf = self.ex_net.requests[0].get_perf_counts()
             return proc_out, perf
-        else:       
+        else:
             return proc_out, {}
 
     def preprocess_output(self, outputs):
@@ -119,8 +127,11 @@ class HeadPoseEstimationModel:
         :param outputs: inference output
         :return: contour points of the head
         """
-        cnt = [outputs['angle_y_fc'].tolist()[0][0], outputs['angle_p_fc'].tolist()[0][0],
-               outputs['angle_r_fc'].tolist()[0][0]]
+        cnt = [
+            outputs["angle_y_fc"].tolist()[0][0],
+            outputs["angle_p_fc"].tolist()[0][0],
+            outputs["angle_r_fc"].tolist()[0][0],
+        ]
         return cnt
 
     def preprocess_input(self, image):
